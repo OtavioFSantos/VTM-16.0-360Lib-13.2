@@ -3,19 +3,19 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-fid1 = open('/home/otavio/Downloads/VTM_16/Python_Scripts/KiteQP37/saida64x64.md','r')
-fid2 = open('/home/otavio/Downloads/VTM_16/Python_Scripts/KiteQP32/saida64x64.md','r')
-fid3 = open('/home/otavio/Downloads/VTM_16/Python_Scripts/KiteQP27/saida64x64.md','r')
-fid4 = open('/home/otavio/Downloads/VTM_16/Python_Scripts/KiteQP22/saida64x64.md','r')
+fid1 = open('/home/otavio/Downloads/VTM_16/Python_Scripts/TangoQP37/saida16x4.md','r')
+fid2 = open('/home/otavio/Downloads/VTM_16/Python_Scripts/TangoQP32/saida16x4.md','r')
+fid3 = open('/home/otavio/Downloads/VTM_16/Python_Scripts/TangoQP27/saida16x4.md','r')
+fid4 = open('/home/otavio/Downloads/VTM_16/Python_Scripts/TangoQP22/saida16x4.md','r')
 
-Bloco_X = 64
-Bloco_Y = 64
+Bloco_X = 16
+Bloco_Y = 4
 
 FLAG_MIP = 0
 FLAG_ISP = 0
 FLAG_MRL = 0
-FLAG_PLANAR = 0
-FLAG_DC = 1
+FLAG_PLANAR = 1
+FLAG_DC = 0
 
 CU_TESTA_1 = np.zeros((2048, 4096))
 CU_TESTA_2 = np.zeros((2048, 4096))

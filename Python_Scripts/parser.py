@@ -1,4 +1,4 @@
-fid = open('/home/otavio/Downloads/VTM_16/Python_Scripts/ChairQP32/4x4.csv','r')
+fid = open('/home/otavio/Downloads/VTM_16/Python_Scripts/4x4.csv','r')
 
 for line in fid:
     values = line.split(';')

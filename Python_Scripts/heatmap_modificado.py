@@ -3,12 +3,16 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-fid = open('saida4x4.md','r')
 
 # -----
+folderName = "chairqp32"
+
 Bloco_X = 4
-Bloco_Y = 4
+Bloco_Y = 16
 # -----
+
+blockSize = "%dx%d" % (Bloco_X, Bloco_Y)
+fid = open('/home/otavio/Downloads/VTM_16/Python_Scripts/'+folderName+'/saida'+blockSize+'.md','r')
 
 # @iagostorch BEGIN
 # Indicam se a CU foi codificada com um modo intra tradicional, ou se alguma das novas ferramentas foi utilizada
@@ -144,17 +148,17 @@ for i in range(2048):
 print("SALVANDO ARQUIVOS...")
 # SALVA OS MAPAS EM ARQUIVOS .csv
 blockSize = "_%dx%d" % (Bloco_X, Bloco_Y)
-np.savetxt("Rate_MRL"+blockSize+".csv", IS_MRL_RATE,delimiter=',',fmt='%f')
-np.savetxt("Rate_ISP"+blockSize+".csv", IS_ISP_RATE,delimiter=',',fmt='%f')
-np.savetxt("Rate_MIP"+blockSize+".csv", IS_MIP_RATE,delimiter=',',fmt='%f')
-np.savetxt("Rate_Normal"+blockSize+".csv", IS_NORMAL_RATE,delimiter=',',fmt='%f')
+np.savetxt("/home/otavio/Downloads/VTM_16/Python_Scripts/"+folderName+"/Rate_MRL"+blockSize+".csv", IS_MRL_RATE,delimiter=',',fmt='%f')
+np.savetxt("/home/otavio/Downloads/VTM_16/Python_Scripts/"+folderName+"/Rate_ISP"+blockSize+".csv", IS_ISP_RATE,delimiter=',',fmt='%f')
+np.savetxt("/home/otavio/Downloads/VTM_16/Python_Scripts/"+folderName+"/Rate_MIP"+blockSize+".csv", IS_MIP_RATE,delimiter=',',fmt='%f')
+np.savetxt("/home/otavio/Downloads/VTM_16/Python_Scripts/"+folderName+"/Rate_Normal"+blockSize+".csv", IS_NORMAL_RATE,delimiter=',',fmt='%f')
 
-np.savetxt("Rate_Normal_DC"+blockSize+".csv", IS_NORMAL_DC_RATE,delimiter=',',fmt='%f')
-np.savetxt("Rate_Normal_Planar"+blockSize+".csv", IS_NORMAL_PLANAR,delimiter=',',fmt='%f')
-np.savetxt("Rate_Normal_Angular"+blockSize+".csv", IS_NORMAL_ANGULAR_RATE,delimiter=',',fmt='%f')
+np.savetxt("/home/otavio/Downloads/VTM_16/Python_Scripts/"+folderName+"/Rate_Normal_DC"+blockSize+".csv", IS_NORMAL_DC_RATE,delimiter=',',fmt='%f')
+np.savetxt("/home/otavio/Downloads/VTM_16/Python_Scripts/"+folderName+"/Rate_Normal_Planar"+blockSize+".csv", IS_NORMAL_PLANAR,delimiter=',',fmt='%f')
+np.savetxt("/home/otavio/Downloads/VTM_16/Python_Scripts/"+folderName+"/Rate_Normal_Angular"+blockSize+".csv", IS_NORMAL_ANGULAR_RATE,delimiter=',',fmt='%f')
 
 # SOMA OS MODOS ISP, MRL, MIP E NORMAL PRA DESCOBRIR A COBERTURA TOTAL
 soma = IS_MRL_RATE + IS_ISP_RATE + IS_MIP_RATE + IS_NORMAL_RATE
-np.savetxt("Rate_MRL+ISP+MIP+Normal"+blockSize+".csv", soma, delimiter=',', fmt='%f')
+np.savetxt("/home/otavio/Downloads/VTM_16/Python_Scripts/"+folderName+"/Rate_MRL+ISP+MIP+Normal"+blockSize+".csv", soma, delimiter=',', fmt='%f')
 
 # @iagostorch END

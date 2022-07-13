@@ -3,17 +3,17 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-fid = open('/home/otavio/Downloads/VTM_16/Python_Scripts/TrolleyQP22/saida64x64.md','r')
+fid = open('/home/otavio/Downloads/VTM_16/Python_Scripts/TangoQP37/saida4x4.md','r')
 
 # -----
-Bloco_X = 64
-Bloco_Y = 64
+Bloco_X = 4
+Bloco_Y = 4
 
 FLAG_MIP = 0
 FLAG_ISP = 0
 FLAG_MRL = 0
-FLAG_PLANAR = 0
-FLAG_DC = 1
+FLAG_PLANAR = 1
+FLAG_DC = 0
 # -----
 
 CU_TESTA = np.zeros((2048, 4096))
